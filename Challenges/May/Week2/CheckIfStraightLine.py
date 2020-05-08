@@ -21,7 +21,7 @@ class Solution:
                     return True
                 return False
             
-            if (y != m*x + c) :
+            elif (y != m*x + c) :
                 return False
             return True
         
