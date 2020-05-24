@@ -1,3 +1,23 @@
+# O(n2)
+class Solution:
+    def bstFromPreorder(self, preorder: List[int]) -> TreeNode:
+        root = None
+        def dfs(root,element):
+            if not root :
+                root = TreeNode(element)
+                return root
+            if element < root.val :
+                root.left = dfs(root.left,element)
+            else:
+                root.right = dfs(root.right,element)
+            return root
+        
+        for i in preorder :
+            root = dfs(root,i)
+            
+        return root
+
+
 class Solution:
     def bstFromPreorder(self, preorder: List[int]) -> TreeNode:
         if len(preorder) == 0 :
