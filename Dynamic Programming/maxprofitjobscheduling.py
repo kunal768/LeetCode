@@ -14,7 +14,7 @@ class Solution:
         for i in range(1,n):
             incl = jobs[i][2]
             l = lastNonConflict(i)
-            if l != github-1 :
+            if l != -1 :
                 incl += dp[l] 
             dp[i] = max(dp[i-1],incl)
        
