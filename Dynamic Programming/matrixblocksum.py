@@ -17,3 +17,25 @@ class Solution:
         return dp
                 
             
+# Concept of Prefix Sum in matrix 
+def prefixsumMatrix(matrix):
+	n,m = len(matrix),len(matrix[0])
+	prefixsum = [[0 for _ in range(m)] for _ in range(n)]
+	prefixsum[0][0] = matrix[0][0]
+
+	# fill the first row and column 
+	for i in range(1,m):
+		prefixsum[0][i] = prefixsum[0][i-1] + matrix[0][i]
+
+	for i in range(1,n):
+		prefixsum[i][0] = prefixsum[i-1][0] + matrix[i][0]
+
+	# updating values in all cells 
+	# prefixsum[i][j] = prefixsum[i-1][j] + prefixsum[i][j-1] - prefixsum[i-1][j-1] + matrix[i][j]
+
+	for i in range(1,n):
+		for j in range(1,m):
+			prefixsum[i][j] = prefixsum[i-1][j] + prefixsum[i][j-1] - prefixsum[i-1][j-1] + matrix[i][j]
+
+	print(prefixsum)
+	return prefixsum
