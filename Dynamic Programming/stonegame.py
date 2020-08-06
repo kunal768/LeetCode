@@ -30,19 +30,18 @@ Note:
     1 <= piles[i] <= 500
     sum(piles) is odd.
 
-''' 
-
 By observation : Due to given constraints Alex always wins the game 
 since it can either take all the even indexed coins or the odd indexed coins 
 if sum(evenindexed) > sum(oddindexed) Alex takes all even indexed else it takes all odd indexed and either is bound to be greater due to given constraints 
+'''
 
--- Solution by observation 
+#-- Solution by observation 
 class Solution:
     def stoneGame(self, nums: List[int]) -> bool:
         return True
 
--- Solution by Recursion 
-This even works without the given constraints
+#-- Solution by Recursion 
+#This even works without the given constraints
 
 from functools import lru_cache
 class Solution:
@@ -54,7 +53,7 @@ class Solution:
             return max(nums[i]-dfs(i+1,j), nums[j]-dfs(i,j-1))
 
 
-REFERENCE : https://binarysearch.io/problems/Candy-Race
+#REFERENCE : https://binarysearch.io/problems/Candy-Race
 
 
 
