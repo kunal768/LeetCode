@@ -1,3 +1,4 @@
+# Reference : https://www.geeksforgeeks.org/maximum-xor-of-two-numbers-in-an-array/
 class Solution:
     def findMaximumXOR(self, arr: List[int]) -> int:
         maxx,mask = 0,0
@@ -13,6 +14,6 @@ class Solution:
                 if newMaxx ^ prefix in se :
                     maxx = newMaxx
                     break
-= 
+ 
             se.clear()
         return maxx
